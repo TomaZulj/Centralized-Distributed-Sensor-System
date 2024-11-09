@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package sensor;
+
+service SensorService {
+  rpc GetReading (ReadingRequest) returns (ReadingResponse);
+}
+
+message ReadingRequest {
+  string sensorId = 1;
+}
+
+message ReadingResponse {
+  double temperature = 1;
+  double humidity = 2;
+  double pressure = 3;
+  double CO = 4;
+  double NO2 = 5;
+  double SO2 = 6;
+}
